@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 /** Estado e Cidade 
 *  Checklist para criar entidades: 
 * o Atributos básicos 
@@ -29,6 +31,7 @@ public class Estado implements Serializable{
 	private Integer id;
 	private String nome;
 
+	@JsonBackReference			//omite na serialização
 	@OneToMany(mappedBy="estado")
 	private List<Cidade> cidades = new ArrayList<>();
 	
