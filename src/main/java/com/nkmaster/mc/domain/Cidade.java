@@ -25,6 +25,41 @@ public class Cidade implements Serializable{
 	@JoinColumn(name="estado_id") 	//definindo a chave estrangeira
 	private Estado estado;  //só um estado
 	
+	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public Estado getEstado() {
+		return estado;
+	}
+
+	public void setEstado(Estado estado) {
+		this.estado = estado;
+	}
+
+	public Cidade() {		
+	}
+	
+	public Cidade(Integer id, String nome, Estado estado) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.estado = estado;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -50,38 +85,5 @@ public class Cidade implements Serializable{
 		return true;
 	}
 
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public Estado getEstado() {
-		return estado;
-	}
-
-	public void setEstado(Estado estado) {
-		this.estado = estado;
-	}
-
-	public Cidade(Integer id, String nome, Estado estado) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.estado = estado;
-	}
-
-	public Cidade() {
-		
-	}
+	
 }
