@@ -19,13 +19,13 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Produto implements Serializable {
-	private static final long serialVersionUID = -281757477625736646L;
+	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
-	private Double preço;
+	private Double preco;
 	
 	@JsonIgnore
 	@ManyToMany													//RELACIONAMENTO ENTRE TABELAS
@@ -43,11 +43,11 @@ public class Produto implements Serializable {
 	public Produto() {		
 	}
 
-	public Produto(Integer id, String nome, Double preço) {
+	public Produto(Integer id, String nome, Double preco) {
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.preço = preço;
+		this.preco = preco;
 	}
 	
 	@JsonIgnore
@@ -75,12 +75,12 @@ public class Produto implements Serializable {
 		this.nome = nome;
 	}
 
-	public Double getPreço() {
-		return preço;
+	public Double getPreco() {
+		return preco;
 	}
 
-	public void setPreço(Double preço) {
-		this.preço = preço;
+	public void setPreço(Double preco) {
+		this.preco = preco;
 	}
 
 	public List<Categoria> getCategorias() {
